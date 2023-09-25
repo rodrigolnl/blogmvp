@@ -7,7 +7,7 @@ from .models import User
 from .serializers import UserSerializer
 
 
-class RegisterView(APIView):
+class RegisterViewSet(APIView):
     parser_classes = [JSONParser]
 
     def post(self, request):
@@ -23,7 +23,7 @@ class RegisterView(APIView):
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
-class UserView(APIView):
+class UserViewSet(APIView):
     permission_classes = (IsAuthenticated,)
     parser_classes = [JSONParser]
 
@@ -32,7 +32,7 @@ class UserView(APIView):
         return Response(serializer.data, status=status.HTTP_200_OK)
 
 
-class UsersView(APIView):
+class UsersViewSet(APIView):
     permission_classes = (IsAuthenticated,)
 
     def get(self, request):

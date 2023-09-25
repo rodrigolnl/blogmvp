@@ -8,7 +8,7 @@ from rest_framework import status
 from rest_framework.permissions import IsAuthenticated
 
 
-class BlogPostView(APIView):
+class BlogPostViewSet(APIView):
     parser_classes = [JSONParser]
     permission_classes = (IsAuthenticated,)
 
@@ -36,7 +36,7 @@ class BlogPostView(APIView):
         return Response('', status=status.HTTP_200_OK)
 
 
-class AllBlogPostView(APIView):
+class AllBlogPostViewSet(APIView):
     parser_classes = [JSONParser]
     permission_classes = (IsAuthenticated,)
 
